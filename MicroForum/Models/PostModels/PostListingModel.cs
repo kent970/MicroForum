@@ -15,7 +15,7 @@ namespace MicroForum.Models.PostModels
 
         public ForumListingModel Forum { get; set; }
         
-        public int RepliesCount { get; set; }
+        public int? RepliesCount { get; set; }
 
 
     }
