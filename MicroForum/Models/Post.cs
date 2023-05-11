@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
+using IApplicationLifetime = Microsoft.AspNetCore.Hosting.IApplicationLifetime;
 
 namespace MicroForum.Models
 {
@@ -17,7 +19,7 @@ namespace MicroForum.Models
         public string UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]
-        public  ApplicationUser? User { get; set; }
+        public  ApplicationUser User { get; set; }
         [Required]
         public  Forum Forum { get; set; }
        

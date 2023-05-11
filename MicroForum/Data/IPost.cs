@@ -9,6 +9,7 @@ namespace MicroForum.Data
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetFiltered(string searchQuery);
         IEnumerable<Post> GetByForum(int id);
+        IEnumerable<Post> GetLatestPosts(int n);
         Task Add(Post post);
         Task Delete(int id);
         Task EditContent(int id,string newContent);

@@ -42,10 +42,12 @@ namespace MicroForum.Controllers
                 Id = post.Id,
                 AuthorId = post.User.Id,
                 AuthorRating = post.User.Rating,
+                AuthorName = post.User.UserName,
                 Title = post.Title,
                 CreatedDate = post.CreatedDate,
                 RepliesCount = post.Replies?.Count(),
                 Forum = BuildForumListing(post)
+                
             });
 
             var model = new ForumTopicModel
