@@ -43,10 +43,7 @@ namespace MicroForum.Controllers
             return View(model);
         }
 
-        private bool isAdmin(ApplicationUser postUser)
-        {
-            return _userManager.GetRolesAsync(postUser).Result.Contains("Admin");
-        }
+       
 
         public IActionResult Create(int id)
         {
@@ -108,6 +105,11 @@ namespace MicroForum.Controllers
                 ReplyContent = reply.Content,
                 IsAdmin = isAdmin(reply.User)
             });
+        }
+         private bool isAdmin(ApplicationUser user)
+        {
+            return _userManager.GetRolesAsync(user)
+                .Result.Contains("Admin");
         }
     }
 }

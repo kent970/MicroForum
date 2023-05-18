@@ -7,7 +7,7 @@ namespace MicroForum.Data
     {
         Post GetById(int id);
         IEnumerable<Post> GetAll();
-        IEnumerable<Post> GetFiltered(string searchQuery);
+        IEnumerable<Post> GetFiltered(Forum forum,string searchQuery);
         IEnumerable<Post> GetByForum(int id);
         IEnumerable<Post> GetLatestPosts(int n);
         Task Add(Post post);

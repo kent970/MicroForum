@@ -30,9 +30,13 @@ namespace MicroForum.Services
                 .Include(post => post.Forum);
         }
 
-        public IEnumerable<Post> GetFiltered(string searchQuery)
+        public IEnumerable<Post> GetFiltered(Forum forum,string searchQuery)
         {
-            throw new NotImplementedException();
+            
+            return string.IsNullOrEmpty(searchQuery)
+                ? forum.Posts
+                : forum.Posts.Where(post => post.Title.Contains(searchQuery) || post.Content.Contains(searchQuery));
+
         }
 
         public IEnumerable<Post> GetByForum(int id)
